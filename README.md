@@ -2,7 +2,7 @@
 
 Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advance from Geeky Shows youtube channel
 
-## ch-2 routing + etc
+## ch-2 routing + etc - day-1-2-May-2024
 
 - 1> Folder structure ✅
 
@@ -60,3 +60,70 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
   - we can convert a server component to client / or make a client component by adding a directive "use client" on 1st line of component
   - all react hooks, ui interactive work, should be done using clinet components
   - all data and backedn related work, should be done using server components
+
+## Day - 2 - 3 may 2024
+
+- 7> Using different types of css
+
+  - global css - already know ✅
+  - module css - if only want to use in any specific component
+    - create a css module - nothing but plain css file with extension - cssFileName.module.css
+    - import as styles from cssFileName
+    - class/id can be accessed via style.class_id_name
+  - css classname are pre-hashed via nextJs -> optimization feature
+
+- 8> Using Images (auto optimised)
+
+  - import Image component from next/image, for optimised image usage
+  - simply import image of choice
+  - use it as scr in Image component
+  - Image coponent takes a lot of props for both styling and optimizing, read on docs
+
+- 9> Fetching data - using fetch
+  - nothing new just plaing age old data fetching via fetch api,
+  - cool thing is since we are fetching data from server using fetch, browser is not making api calls, server is making calls, and it is faster
+  - can not use useState and client component things unles making the component client component
+
+## ch-3 - backend | Day - 2 - 3 may 2024
+
+- The work which people use to do in laravel, expres, django can now be done in next js only
+
+- 10> creating API(s) / API Routes
+
+  - next made it super simple
+  - create api/products/route.js inside app folder
+  - will point to api route -> api/products
+  - route.js will be your executation code
+    - in it simple named export GET/PUT/POST/DELETE/PATCH as functions
+    - each funciton can take req object as param
+    - for example for a get request return json data
+      - we can use return NextResponse.json(productList)
+        - when NextResponse in imported from next/server, takes in json data to be served
+  - Note : only name export method functions
+
+💡 Note : both http requests and response have some comman and some unique elements
+
+- comman elements : headers, and content-type, cookies(optional), body(optional)
+- specfic to http request : url, method
+- specidic to http responsie : status code
+
+- 11> in GET - how to access request headers
+
+  - the req object of GET method of api has, req.headers which can be used to access request headers
+  - for bit more work : Header interface object can be created | pure JS not specific to next
+    - Header interface object, do have extra properties and method for usecases
+
+- 12> in GET - how to get url query params
+
+  - again req.url will get complete url which is being request
+  - will create an instance of URL interface will pass in req.url
+  - now that instance will have searchParams as object which can be used to get the query search params
+  - now searchParam will give access to its methods, for manupilating query params
+
+- 13> in GET - Cookies
+
+  - cookies are nothing but small data sent from web server to browser/client to remember their visit to particular site/app [remembering login settings, display settings, etc]
+  - req.cookies;
+  - cookies() from next/headers
+
+- 14> in POST
