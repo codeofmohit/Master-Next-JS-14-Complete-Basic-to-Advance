@@ -126,4 +126,50 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
   - req.cookies;
   - cookies() from next/headers
 
-- 14> in POST
+## ❌ 1 day gap - learnt mongoDB in 1 day ❌
+
+## ch-3 - backend | Day - 3 - 5 may 2024
+
+- 14> in POST req
+
+  - Note : get and post are hitting on next js own server=
+  - in post req alway mostly we post/send data to server
+  - hence, via postman we will post 2 types of data
+    - body - json
+      - req.json()
+    - body - formdata
+      - req.formData()
+        - formData().get() - further object can be extracted
+
+- 15> dymanic api route
+
+  - folder name [id] -> route.js
+  - in the api method function > GET/POST,
+  - take in a second argument as context
+  - which which contain dynamic param as id
+
+- 16> make 3rd party api request from server
+  - api request which are being made from next js server are more safe
+  - so for imroved security
+  - what one can do is , we can create a next js api
+  - now whatever public api we need to call can be called from hitting our next js api
+  - flow
+    - we hit next js api -> next js api will hit the pubic api -> and will give the data
+
+## ch-4 - mongoDB | Day - 3 - 5 may 2024
+
+- 17> making db connection via mongoose
+
+  - make a mongoDB connection file
+  - store creds in env file
+  - install mongoose which will make the connection to next app to mongo db
+  - write basic mongoose connection script
+  - run connection script wherever you want to make connection
+
+- 18> defining schema and model using mongoose model syntax
+
+- 19> then simple making get and post requests as per code and updating the UI with content
+
+- 20> Server Actions :
+  - directly we can call find()/create() in server component itself, no need to make api or writing code to handle fetc and all
+  - while posting the data make use of form action and use server action there

@@ -8,7 +8,7 @@ const getData = async () => {
 
 const LearnUseFtech = async () => {
   const dataFromApi = await getData();
-  console.log(dataFromApi);
+  // console.log(dataFromApi);
   return <div>LearnUseFtech</div>;
 };
 export default LearnUseFtech;
