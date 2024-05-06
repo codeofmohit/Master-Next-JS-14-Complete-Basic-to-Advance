@@ -47,6 +47,7 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
   - as name suggests used for onclick navigation similar to link and a href
   - imported component from next/link
   - will take in route as in href, and link text in bw link components as chlidren
+  - 🤯 prefetch the links, on load only, optimization hack alway to this (recommended)
 
 - 5> useRouter hook for navigation (programmitically they said) ✅
 
@@ -186,21 +187,38 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
 
   - alternatively we can add react suspence with fallback and wrap the component into it to make loading effect
 
-- 23> Caching ✅
+- 23> 🤯 Caching (imp) ✅
 
   - Statically rendered pages are cached at build time.
   - Data fetched with fetch is cached on the server, reused on subsequent requests.
   - You can control caching behavior for both pages and data (cache, revalidate).
+
+    [if using server-actions then directly export validate cause not access to fetch]
+
+    - export const revalidate = 0; [site will be server side rendered], (opting out of cache)
+      - revalidate:3600 // will cache for 1 hour after 1 hour will update with new data
+        [incremental side generation]
+
+    [if not using server - actions and have access to fetch, pass revalidate as next object along with other tings such as api url, method, body, etc]
+
     - while making api request we can pass revelidate optino
       - next :{
         revalidate:3600 // revalidate recheck for new updates data afetr 1 hour
         }
 
-- 24> static and dynamic rendering ✅
+- 24> 🤯 static and dynamic rendering (imp) ✅
 
   - we can choose the type of rendering we want / or next auto picks which is best for which case
+
   - Static content: Pre-built at deploy time for super speed (think blog posts).
-  - Dynamic updates: Built on the server each request for personalized content (e.g., shopping carts).
+
+    - always cached data
+
+  - Dynamic rendering: Built on the server each request for personalized content (e.g., shopping carts).
+
+    - 1> incremental site generation (revalidata:3600) // site generate after 1 hour
+    - 2> server side rendering : no-cache, server generates/build site everytime
+
     - we can make a route foreefully as dynamically rendered -
       - export const dynamic = "force-dynamic"
 
@@ -213,6 +231,7 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
 
   - in a route directory we can make not-found file in cases recourse are not available, similar case with error file
   - explicityly notFound() can be exported conditionaly to execute not-found file
+  - not-found is imported from next/navigation
 
 - 27> deployment ✅
 
@@ -221,3 +240,18 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
     - give static prod build : simply html+css+js : loose a lot of backend features and optimizations of next
 
   - Note : next js app is a Node.JS app with a server running in backend doing and optimizing the app
+
+- 28> instad of .env use .env.local recommeded by next ✅
+
+- 29> generateStaticParams ✅
+
+  - for pre-building all the dynamic routes pages on run time, instead on rendering on demand we can use this method
+
+  - The generateStaticParams function can be used in combination with dynamic route segments to statically generate routes at build time instead of on-demand at request time.
+
+- 30> useFormState hook from react-dom, hooks which is helpful dealing with data submittion using form actions ✅
+
+- 31> redirect() from next/navigation ✅
+
+- 32> 🤯 meta tags : OG tags ✅
+  - Open Graph meta tags are snippets of code that control how URLs are displayed when shared on social media.
