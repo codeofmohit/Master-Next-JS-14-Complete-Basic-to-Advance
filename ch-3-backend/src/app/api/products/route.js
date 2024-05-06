@@ -29,14 +29,14 @@ const GET = async (req) => {
 };
 
 const POST = async (req) => {
-  // console.log(req);
+  // json body
+  // const resFromPost = await req.json();
+  // console.log(resFromPost);
 
-  // request body
-  const res = await req.json();
-  console.log("json response", res);
+  const requestBody_formData = await req.formData();
+  console.log(requestBody_formData);
 
-  const resMsg = { msg: "response sent success!" };
-  return NextResponse.json(resMsg);
+  return NextResponse.json({ msg: "post success" }, { status: 201 });
 };
 
 export { GET, POST };
