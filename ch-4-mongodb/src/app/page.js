@@ -3,6 +3,7 @@ import DisplayPosts from "../components/DisplayPosts";
 import PostPosts from "../components/PostPosts";
 import DisplayPostsServerAction from "../components/DislpayPostsServerActions";
 import PostPostsServerActions from "../components/PostPostsServerActions";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -10,7 +11,9 @@ export default function Home() {
       {/* <PostPosts /> */}
       {/* <DisplayPosts /> */}
       <PostPostsServerActions />
-      <DisplayPostsServerAction />
+      <Suspense fallback="Loading....">
+        <DisplayPostsServerAction />
+      </Suspense>
     </main>
   );
 }

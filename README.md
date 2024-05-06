@@ -171,5 +171,53 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
 - 19> then simple making get and post requests as per code and updating the UI with content ✅
 
 - 20> Server Actions : ✅
+
   - directly we can call find()/create() in server component itself, no need to make api or writing code to handle fetc and all
   - while posting the data make use of form action and use server action there
+
+- 21> revalidatePath() ✅
+
+  - checks and re-render data after certain aciton to fetch and get updated data
+  - takes in path name
+
+- 22> loading.js for any route add a loading.js file that will load while data/request/response is loading ✅
+
+- 23> Streaming ✅
+
+  - alternatively we can add react suspence with fallback and wrap the component into it to make loading effect
+
+- 23> Caching ✅
+
+  - Statically rendered pages are cached at build time.
+  - Data fetched with fetch is cached on the server, reused on subsequent requests.
+  - You can control caching behavior for both pages and data (cache, revalidate).
+    - while making api request we can pass revelidate optino
+      - next :{
+        revalidate:3600 // revalidate recheck for new updates data afetr 1 hour
+        }
+
+- 24> static and dynamic rendering ✅
+
+  - we can choose the type of rendering we want / or next auto picks which is best for which case
+  - Static content: Pre-built at deploy time for super speed (think blog posts).
+  - Dynamic updates: Built on the server each request for personalized content (e.g., shopping carts).
+    - we can make a route foreefully as dynamically rendered -
+      - export const dynamic = "force-dynamic"
+
+- 25> Middleware ✅
+
+  - request is made --> middleware --> response is served
+  - in app route in a route directory, middleware file will work as a middleware
+
+- 26> not-foud file / error ✅
+
+  - in a route directory we can make not-found file in cases recourse are not available, similar case with error file
+  - explicityly notFound() can be exported conditionaly to execute not-found file
+
+- 27> deployment ✅
+
+  - static export, via output:export in next.config ❌ not recommeded
+
+    - give static prod build : simply html+css+js : loose a lot of backend features and optimizations of next
+
+  - Note : next js app is a Node.JS app with a server running in backend doing and optimizing the app

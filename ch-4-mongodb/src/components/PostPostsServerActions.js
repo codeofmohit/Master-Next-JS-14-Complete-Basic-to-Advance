@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import connectMongo from "../db/connectMongo";
 import Post from "../db/models/Post";
 
@@ -8,6 +9,7 @@ const create = async (formData) => {
     title: formData.get("title"),
     body: formData.get("body"),
   });
+  revalidatePath("/");
 };
 
 const PostPostsServerActions = () => {
