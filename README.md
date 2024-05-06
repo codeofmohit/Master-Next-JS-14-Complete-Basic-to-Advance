@@ -63,16 +63,16 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
 
 ## Day - 2 - 3 may 2024
 
-- 7> Using different types of css
+- 7> Using different types of css ✅
 
-  - global css - already know ✅
+  - global css - already know
   - module css - if only want to use in any specific component
     - create a css module - nothing but plain css file with extension - cssFileName.module.css
     - import as styles from cssFileName
     - class/id can be accessed via style.class_id_name
   - css classname are pre-hashed via nextJs -> optimization feature
 
-- 8> Using Images (auto optimised)
+- 8> Using Images (auto optimised) ✅
 
   - import Image component from next/image, for optimised image usage
   - simply import image of choice
@@ -88,7 +88,7 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
 
 - The work which people use to do in laravel, expres, django can now be done in next js only
 
-- 10> creating API(s) / API Routes
+- 10> creating API(s) / API Routes ✅
 
   - next made it super simple
   - create api/products/route.js inside app folder
@@ -101,13 +101,13 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
         - when NextResponse in imported from next/server, takes in json data to be served
   - Note : only name export method functions
 
-💡 Note : both http requests and response have some comman and some unique elements
+💡 Note : both http requests and response have some comman and some unique elements ✅
 
 - comman elements : headers, and content-type, cookies(optional), body(optional)
 - specfic to http request : url, method
 - specidic to http responsie : status code
 
-- 11> in GET - how to access request headers
+- 11> in GET - how to access request headers ✅
 
   - the req object of GET method of api has, req.headers which can be used to access request headers
   - for bit more work : Header interface object can be created | pure JS not specific to next
@@ -120,7 +120,7 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
   - now that instance will have searchParams as object which can be used to get the query search params
   - now searchParam will give access to its methods, for manupilating query params
 
-- 13> in GET - Cookies
+- 13> in GET - Cookies ✅
 
   - cookies are nothing but small data sent from web server to browser/client to remember their visit to particular site/app [remembering login settings, display settings, etc]
   - req.cookies;
@@ -130,7 +130,7 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
 
 ## ch-3 - backend | Day - 3 - 5 may 2024
 
-- 14> in POST req
+- 14> in POST req ✅
 
   - Note : get and post are hitting on next js own server=
   - in post req alway mostly we post/send data to server
@@ -141,14 +141,14 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
       - req.formData()
         - formData().get() - further object can be extracted
 
-- 15> dymanic api route
+- 15> dymanic api route ✅
 
   - folder name [id] -> route.js
   - in the api method function > GET/POST,
   - take in a second argument as context
   - which which contain dynamic param as id
 
-- 16> make 3rd party api request from server
+- 16> make 3rd party api request from server ✅
   - api request which are being made from next js server are more safe
   - so for imroved security
   - what one can do is , we can create a next js api
@@ -158,7 +158,7 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
 
 ## ch-4 - mongoDB | Day - 3 - 5 may 2024
 
-- 17> making db connection via mongoose
+- 17> making db connection via mongoose ✅
 
   - make a mongoDB connection file
   - store creds in env file
@@ -166,10 +166,10 @@ Learning Next JS via a YT crash course Master Next JS 14 Complete Basic to Advan
   - write basic mongoose connection script
   - run connection script wherever you want to make connection
 
-- 18> defining schema and model using mongoose model syntax
+- 18> defining schema and model using mongoose model syntax ✅
 
-- 19> then simple making get and post requests as per code and updating the UI with content
+- 19> then simple making get and post requests as per code and updating the UI with content ✅
 
-- 20> Server Actions :
+- 20> Server Actions : ✅
   - directly we can call find()/create() in server component itself, no need to make api or writing code to handle fetc and all
   - while posting the data make use of form action and use server action there
